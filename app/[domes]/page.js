@@ -442,6 +442,18 @@ export default function Dome({ params }) {
 
         {/* Menu Details */}
         <div className="basis-1/2 items-center flex sm:items-start md:flex md:justify-center">
+          {/* Because these following six utilites are used dynamically
+          to render the color options for the geometries, those must be
+          compiled forcely in this way. */}
+          <div hidden>
+            <div className="bg-blue-500"></div>
+            <div className="bg-orange-500"></div>
+            <div className="bg-red-500"></div>
+            <div className="bg-cyan-500"></div>
+            <div className="bg-green-500"></div>
+            <div className="bg-yellow-500"></div>
+          </div>
+
           {/* Windows */}
           {selectedMenuItems[0] && (
             <div className="w-full md:w-1/2 lg:w-1/3 flex flex-wrap gap-2 justify-between">
