@@ -346,19 +346,24 @@ export default function Dome({ params }) {
     false,
   ]);
 
+  let [windowsColor, setWindowsColor] = useState("");
+  let [interiorWallsColor, setInteriorWallsColor] = useState("");
+  let [sofaColor, setSofaColor] = useState("");
+  let [TVScreenColor, setTVScreenColor] = useState("");
+
   return (
     <div className="flex flex-col h-screen">
       {/* The Canvas Area */}
-      <div className="relative w-full grow h-1">
+      <div className="relative w-full h-1 grow">
         {/* Configurator canvas */}
         <Configurator
-          antialias
+          antialias={true}
           onSceneReady={onSceneReady}
           onRender={onRender}
           id="house_configurator"
           className="w-full h-full"
         />
-        <div className="absolute top-0 left-0 pt-2 px-4 flex flex-wrap w-full justify-between text-white">
+        <div className="absolute top-0 left-0 flex flex-wrap justify-between w-full px-4 pt-2 text-white">
           {/* Top left cornor */}
           <div className="text-3xl font-medium text-white">{`Domes / ${params.domes}`}</div>
           {/* Top right cornor */}
@@ -373,7 +378,7 @@ export default function Dome({ params }) {
         </div>
       </div>
 
-      <div className="h-72 md:h-52 flex-none overflow-auto flex flex-col space-y-2 p-2">
+      <div className="flex flex-col flex-none p-2 space-y-2 overflow-auto h-72 md:h-52">
         {/* Menu Items */}
         <div className="basis-1/2 sm:flex sm:justify-center sm:items-center">
           <div className="flex flex-col space-y-1 sm:space-y-0 sm:flex-row sm:justify-between sm:w-full md:w-1/2 xl:w-1/3">
@@ -441,7 +446,7 @@ export default function Dome({ params }) {
         </div>
 
         {/* Menu Details */}
-        <div className="basis-1/2 items-center flex sm:items-start md:flex md:justify-center">
+        <div className="flex items-center basis-1/2 sm:items-start md:flex md:justify-center">
           {/* Because these following six utilites are used dynamically
           to render the color options for the geometries, those must be
           compiled forcely in this way. */}
@@ -456,14 +461,17 @@ export default function Dome({ params }) {
 
           {/* Windows */}
           {selectedMenuItems[0] && (
-            <div className="w-full md:w-1/2 lg:w-1/3 flex flex-wrap gap-2 justify-between">
+            <div className="flex flex-wrap justify-between w-full gap-2 md:w-1/2 lg:w-1/3">
               {["blue", "orange", "red", "cyan", "green", "yellow"].map(
                 (color) => (
                   <div
                     onClick={() => {
+                      setWindowsColor(color);
                       onClickExteriorWindowsFrameColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
+                      windowsColor === color ? "outline" : "hover:outline"
+                    } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -472,14 +480,17 @@ export default function Dome({ params }) {
 
           {/* Interior Walls */}
           {selectedMenuItems[1] && (
-            <div className="w-full md:w-1/2 lg:w-1/3 flex flex-wrap gap-2 justify-between">
+            <div className="flex flex-wrap justify-between w-full gap-2 md:w-1/2 lg:w-1/3">
               {["blue", "orange", "red", "cyan", "green", "yellow"].map(
                 (color) => (
                   <div
                     onClick={() => {
+                      setInteriorWallsColor(color);
                       onClickInteriorWallsColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
+                      interiorWallsColor === color ? "outline" : "hover:outline"
+                    } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -488,14 +499,17 @@ export default function Dome({ params }) {
 
           {/* Sofa */}
           {selectedMenuItems[2] && (
-            <div className="w-full md:w-1/2 lg:w-1/3 flex flex-wrap gap-2 justify-between">
+            <div className="flex flex-wrap justify-between w-full gap-2 md:w-1/2 lg:w-1/3">
               {["blue", "orange", "red", "cyan", "green", "yellow"].map(
                 (color) => (
                   <div
                     onClick={() => {
+                      setSofaColor(color);
                       onClickSofaColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
+                      sofaColor === color ? "outline" : "hover:outline"
+                    } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -504,14 +518,17 @@ export default function Dome({ params }) {
 
           {/* TV Screen */}
           {selectedMenuItems[3] && (
-            <div className="w-full md:w-1/2 lg:w-1/3 flex flex-wrap gap-2 justify-between">
+            <div className="flex flex-wrap justify-between w-full gap-2 md:w-1/2 lg:w-1/3">
               {["blue", "orange", "red", "cyan", "green", "yellow"].map(
                 (color) => (
                   <div
                     onClick={() => {
+                      setTVScreenColor(color);
                       onClickTVScreenChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
+                      TVScreenColor === color ? "outline" : "hover:outline"
+                    } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}

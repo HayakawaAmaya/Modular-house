@@ -20,12 +20,10 @@ export default function Configurator({
 
     if (!canvas) return;
 
-    const engine = new Engine(
-      canvas,
-      antialias,
-      engineOptions,
-      adaptToDeviceRatio
-    );
+    const options = { antialias: true };
+
+    const engine = new Engine(canvas, antialias, options, adaptToDeviceRatio);
+
     const scene = new Scene(engine, sceneOptions);
     if (scene.isReady()) {
       onSceneReady(scene);
