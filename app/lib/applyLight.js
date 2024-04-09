@@ -18,17 +18,18 @@ export default function applyLight(engine, scene) {
     new Vector3(-5, -20, -20),
     scene
   );
-  light.intensity = 1;
-  light.diffuse = new Color3(1, 1, 0.95); // white
+  light.intensity = 0.8;
+  light.diffuse = new Color3(0.9, 0.9, 0.9); // white
 
   // Add ambientLight in the living room
   const ambientLight = new HemisphericLight(
     "ambientLight",
-    new Vector3(0, -2, 0),
+    new Vector3(0, 1, 0),
     scene
   );
-  ambientLight.intensity = 0.7;
-  ambientLight.diffuse = new Color3(1, 1, 0.95);
+  ambientLight.intensity = 0.3;
+  ambientLight.groundColor = new BABYLON.Color3(1, 1, 1);
+  ambientLight.diffuse = new Color3(1, 1, 1);
 
   // GlowLayer
   const gl = new GlowLayer("glow", scene);

@@ -94,14 +94,17 @@ export default function applyMaterials(meshes, scene) {
       case "metal003":
         applyTexture(mesh, exteriorMetal);
         mesh.material.specularColor = new Color3(0, 0, 0);
+        shadowGenerator.addShadowCaster(mesh);
         break;
       case "madeira003_primitive0":
         applyTexture(mesh, exteriorWood);
         mesh.material.specularColor = new Color3(0, 0, 0);
+        shadowGenerator.addShadowCaster(mesh);
         break;
       case "madeira004_primitive0":
         applyTexture(mesh, exteriorWood);
         mesh.material.specularColor = new Color3(0, 0, 0);
+        shadowGenerator.addShadowCaster(mesh);
         break;
       case "madeira005":
         applyTexture(mesh, exteriorWood);
