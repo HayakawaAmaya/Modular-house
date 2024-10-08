@@ -4,9 +4,11 @@ import {
   GlowLayer,
   HemisphericLight,
   PointLight,
+  SpotLight,
   Scene,
   ShadowGenerator,
   Vector3,
+  CubeTexture,
 } from "@babylonjs/core";
 
 let light;
@@ -39,6 +41,43 @@ export default function applyLight(engine, scene) {
   scene.fogMode = Scene.FOGMODE_EXP2;
   scene.fogDensity = 0.01; // Decrease or increase depending upon scene size
   scene.fogColor = new Color3(0.9, 0.9, 0.85);
+
+  // Add environment texture for global illumination
+  scene.environmentTexture = CubeTexture.CreateFromPrefilteredData(
+    "/environment.dds",
+    scene
+  );
+
+  // Add interior spotlights
+  const spotLight1 = new SpotLight(
+    "spotLight1",
+    new Vector3(0, 30, 5),
+    new Vector3(0, -1, 0),
+    Math.PI / 1,
+    2,
+    scene
+  );
+  spotLight1.intensity = 0.1;
+
+  const spotLight2 = new SpotLight(
+    "spotLight1",
+    new Vector3(4, 30, 5),
+    new Vector3(0, -1, 0),
+    Math.PI / 1,
+    2,
+    scene
+  );
+  spotLight2.intensity = 0.1;
+
+  const spotLight3 = new SpotLight(
+    "spotLight1",
+    new Vector3(8, 30, 5),
+    new Vector3(0, -1, 0),
+    Math.PI / 1,
+    2,
+    scene
+  );
+  spotLight3.intensity = 0.1;
 }
 
 export function getShadowGenerator() {

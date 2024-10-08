@@ -143,7 +143,7 @@ export default function applyMaterials(meshes, scene) {
       // Interior Walls
       case "paredes interior.001":
         applyTexture(mesh, interiorWallWood);
-        mesh.material.specularColor = new Color3(0.2, 0.2, 0.2);
+        mesh.material.specularColor = new Color3(0.9, 0.2, 0.2);
         break;
       // Interior Floor
       case "chao interior":

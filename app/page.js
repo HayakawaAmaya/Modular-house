@@ -29,9 +29,8 @@ export default function Home() {
                     className="w-auto h-auto hover:outline hover:outline-offset-4 hover:outline-green-500"
                     alt={layout}
                   />
-                  <p className="text-xl font-medium text-center">{`Layout ${
-                    index + 1
-                  }`}</p>
+                  <p className="text-xl font-medium text-center">{`Layout ${index + 1
+                    }`}</p>
                 </div>
               </div>
             ))}
@@ -41,3 +40,4 @@ export default function Home() {
     </div>
   );
 }
+

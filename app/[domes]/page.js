@@ -113,7 +113,7 @@ function onSceneReady(sceneReady) {
 /**
  * Will run on every frame render.  We are spinning the box on y-axis.
  */
-const onRender = (scene) => {};
+const onRender = (scene) => { };
 
 async function cameraViewChanger(cameraMode) {
   if (scene.activeCamera !== livingRoomCamera && cameraMode === "Living Room") {
@@ -388,11 +388,10 @@ export default function Dome({ params }) {
                   setSelectedMenuItems([true, false, false, false]);
                   cameraViewChanger("Outside");
                 }}
-                className={`p-1 ${
-                  selectedMenuItems[0]
-                    ? "sm:border-b-2 bg-blue-600"
-                    : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
-                } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
+                className={`p-1 ${selectedMenuItems[0]
+                  ? "sm:border-b-2 bg-blue-600"
+                  : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
+                  } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
               >
                 Windows
               </div>
@@ -403,11 +402,10 @@ export default function Dome({ params }) {
                   setSelectedMenuItems([false, true, false, false]);
                   cameraViewChanger("Living Room");
                 }}
-                className={`p-1 ${
-                  selectedMenuItems[1]
-                    ? "sm:border-b-2 bg-blue-600"
-                    : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
-                } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
+                className={`p-1 ${selectedMenuItems[1]
+                  ? "sm:border-b-2 bg-blue-600"
+                  : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
+                  } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
               >
                 Interrior Walls
               </div>
@@ -418,11 +416,10 @@ export default function Dome({ params }) {
                   setSelectedMenuItems([false, false, true, false]);
                   cameraViewChanger("Living Room");
                 }}
-                className={`p-1 ${
-                  selectedMenuItems[2]
-                    ? "sm:border-b-2 bg-blue-600"
-                    : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
-                } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
+                className={`p-1 ${selectedMenuItems[2]
+                  ? "sm:border-b-2 bg-blue-600"
+                  : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
+                  } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
               >
                 Sofa
               </div>
@@ -433,11 +430,10 @@ export default function Dome({ params }) {
                   setSelectedMenuItems([false, false, false, true]);
                   cameraViewChanger("Living Room");
                 }}
-                className={`p-1 ${
-                  selectedMenuItems[3]
-                    ? "sm:border-b-2 bg-blue-600"
-                    : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
-                } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
+                className={`p-1 ${selectedMenuItems[3]
+                  ? "sm:border-b-2 bg-blue-600"
+                  : "bg-blue-400 hover:bg-blue-500 hover:sm:border-b-2"
+                  } text-center sm:bg-white sm:rounded-none sm:hover:text-black border-green-600 sm:hover:bg-white sm:focus:bg-white sm:text-gray-600 sm:shadow-none rounded shadow active:bg-blue-600 hover:cursor-pointer text-white font-semibold`}
               >
                 TV Screen
               </div>
@@ -469,9 +465,8 @@ export default function Dome({ params }) {
                       setWindowsColor(color);
                       onClickExteriorWindowsFrameColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
-                      windowsColor === color ? "outline" : "hover:outline"
-                    } outline-offset-2 outline-green-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${windowsColor === color ? "outline" : "hover:outline"
+                      } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -488,9 +483,8 @@ export default function Dome({ params }) {
                       setInteriorWallsColor(color);
                       onClickInteriorWallsColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
-                      interiorWallsColor === color ? "outline" : "hover:outline"
-                    } outline-offset-2 outline-green-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${interiorWallsColor === color ? "outline" : "hover:outline"
+                      } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -507,9 +501,8 @@ export default function Dome({ params }) {
                       setSofaColor(color);
                       onClickSofaColorChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
-                      sofaColor === color ? "outline" : "hover:outline"
-                    } outline-offset-2 outline-green-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${sofaColor === color ? "outline" : "hover:outline"
+                      } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
@@ -526,9 +519,8 @@ export default function Dome({ params }) {
                       setTVScreenColor(color);
                       onClickTVScreenChange(color);
                     }}
-                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${
-                      TVScreenColor === color ? "outline" : "hover:outline"
-                    } outline-offset-2 outline-green-500`}
+                    className={`w-12 h-12 rounded-lg shadow-lg hover:cursor-pointer bg-${color}-500 outline-3 ${TVScreenColor === color ? "outline" : "hover:outline"
+                      } outline-offset-2 outline-green-500`}
                   ></div>
                 )
               )}
